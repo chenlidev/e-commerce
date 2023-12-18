@@ -14,6 +14,9 @@ const ormConfig: DataSourceOptions = {
     migrations: [
         "src/migration/**/*.ts"
     ],
+    ssl: {
+        rejectUnauthorized: true
+    }
 }
 
 export default ormConfig;
