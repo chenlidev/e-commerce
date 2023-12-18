@@ -11,11 +11,12 @@ import { To, useNavigate} from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import {useCart} from "../../CartContext";
 
 const Navbar = () => {
     const navigate = useNavigate();
     const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
-
+    const { cart } = useCart();
     const handleNavigation = (path: To) => {
         navigate(path);
         setIsMobileMenuToggled(false);
@@ -49,7 +50,7 @@ const Navbar = () => {
                     <Button onClick={() => handleNavigation('/cart')} sx={{  pl: '80px',
                         pr: '80px'}} >
                         <ShoppingCartIcon fontSize="large"/>
-                        <Typography>Cart</Typography>
+                        <Typography>Cart {cart.length}</Typography>
                     </Button>
                 </Box>
             ) : (

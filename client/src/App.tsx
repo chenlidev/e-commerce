@@ -5,6 +5,7 @@ import HomePage from "./scenes/homePage";
 import ProductDetail from "./scenes/productDetailPage";
 import Navbar from "./scenes/navbar";
 import ProductsInCategory from "./scenes/productsInCategory";
+import CartMenu from "./scenes/cartPage";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                     <Route path="/home" element={<HomePage/>}/>
                     <Route path="/products/categories/:categoryId" element={<ProductsInCategory/>}/>
                     <Route path="/products/:productId" element={<ProductDetail/>}/>
+                    <Route path="/cart" element={<CartMenu/>}/>
                 </Routes>
             </BrowserRouter>
 
